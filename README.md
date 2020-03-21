@@ -1,3 +1,3 @@
 # myQuizlet
-Quizlet web app created with React, Django, and Rest Framework
+Quizlet web app created with React, Django, and Rest Framework  
 deploying to AWS...
