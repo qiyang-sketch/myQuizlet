@@ -31,7 +31,7 @@ Setting up REST API for sending and retriving data
   * `QuizList` component will use `manageAPI.js` for retriving all data and storing them into `this.state.Quiz`, `this.state` also have `failedScore` for recording users' attempt of answering quizes.  
   * `QuizList` will display a form of a table to display all data. `onChoiceChanged` will handle change of radio button in form. `handleFormSubmit` will handle form submit event and counting all incorrect attempts. It will compare the submitted choice with the correct choice defined in field `correctAnswer` of `this.state.Quiz`, whichi is model after `models.py`.  
   * Afterwards a pop-up, `QuizResult.js`, will show result of users' attempt
-# Planed Functionalies
+# Planned Functionalies
 * Delete/Add/Edit quizzes
 * Create User 
 * More styling
