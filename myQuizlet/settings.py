@@ -25,7 +25,7 @@ SECRET_KEY = '&fufr-3ek9283x6a=b2kl7u=gxykv5y+-jq5d#100=*_-u%s)7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'quiz-env.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*', 'myQuizlet-dev.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -59,7 +59,7 @@ CORS_ORIGIN_WHITELIST = (
        'https://localhost:8000'
 )
 
-ROOT_URLCONF = 'UQuiz.urls'
+ROOT_URLCONF = 'myQuizlet.urls'
 
 TEMPLATES = [
     {
@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'UQuiz.wsgi.application'
+WSGI_APPLICATION = 'myQuizlet.wsgi.application'
 
 
 # Database

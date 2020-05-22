@@ -23,6 +23,26 @@ class  QuizList  extends  Component {
             self.setState({ Quiz:  result.data, nextPageURL:  result.nextlink})
         });
     }
+
+    handleDelete(e,pk){
+        var  self  =  this;
+        manageAPI.deleteQuizzes({pk :  pk}).then(()=>{
+            var  newArr  =  self.state.Quiz.filter(function(obj) {
+                return  obj.pk  !==  pk;
+            });
+
+            self.setState({Quiz:  newArr})
+        });
+    }
+
+    nextPage(){
+        var  self  =  this;
+        console.log(this.state.nextPageURL);
+        manageAPI.getQuizzesByURL(this.state.nextPageURL).then((result) => {
+            self.setState({ Quiz:  result, nextPageURL:  result.nextlink})
+        });
+    }
+
     onChoiceChanged = changeEvent => {
         this.setState({
             [changeEvent.target.name]: changeEvent.target.value
