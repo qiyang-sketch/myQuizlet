@@ -3,13 +3,12 @@ from django.db import models
 class Quiz(models.Model):
 	question = models.CharField(max_length=255)
 	label = models.CharField(max_length=225)
-	order = models.IntegerField(default=0)
+	#order = models.IntegerField(default=0)
 	choice1 = models.CharField(max_length = 255, blank=True)
 	choice2 = models.CharField(max_length = 255, blank=True)
 	choice3 = models.CharField(max_length = 255, blank=True)
 	choice4 = models.CharField(max_length = 255, blank=True)
 	correctAnswer = models.CharField(max_length = 255)
-	#user = models.ForeignKey('auth.User', related_name='questions', on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.question

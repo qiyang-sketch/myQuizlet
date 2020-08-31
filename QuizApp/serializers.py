@@ -6,6 +6,6 @@ class QuizSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Quiz
-        ordering = ['order']
-        fields = ('pk','question', 'label', 'order', 'choice1', 
+        ordering = ['pk']
+        fields = ('pk','question', 'label', 'choice1', 
         'choice2','choice3','choice4', 'correctAnswer')

@@ -3,7 +3,6 @@ import  manageAPI  from  './manageAPI';
 import Popup from "reactjs-popup";
 import QuizResult from './QuizResult';
 
-const  quizData  =  new  manageAPI();
 
 class  QuizList  extends  Component {
     constructor(props) {
@@ -13,8 +12,8 @@ class  QuizList  extends  Component {
             nextPageURL:  '',
             failedScore: 0
         };
-        this.nextPage  =  this.nextPage.bind(this);
-        this.handleDelete  =  this.handleDelete.bind(this);
+        //this.nextPage  =  this.nextPage.bind(this);
+        //this.handleDelete  =  this.handleDelete.bind(this);
     }
     componentDidMount() {
         var  self  =  this;
@@ -30,11 +29,11 @@ class  QuizList  extends  Component {
             var  newArr  =  self.state.Quiz.filter(function(obj) {
                 return  obj.pk  !==  pk;
             });
-
             self.setState({Quiz:  newArr})
         });
     }
 
+    /*
     nextPage(){
         var  self  =  this;
         console.log(this.state.nextPageURL);
@@ -42,6 +41,7 @@ class  QuizList  extends  Component {
             self.setState({ Quiz:  result, nextPageURL:  result.nextlink})
         });
     }
+    */
 
     onChoiceChanged = changeEvent => {
         this.setState({
@@ -71,14 +71,12 @@ class  QuizList  extends  Component {
 
     render() {
         return (
-
             <form onSubmit={this.handleFormSubmit}>
                 <table  className="table">
                     <thead  key="thead">
                     <tr>
                         <th>#</th>
                         <th>Question</th>
-                        <th>order</th>
                         <th>custom label</th>
                         <th>choice 1</th>
                         <th>choice 2</th>
@@ -91,7 +89,6 @@ class  QuizList  extends  Component {
                         <tr key={c.pk}>
                             <td>{c.pk}  </td>
                             <td>{c.question}</td>
-                            <td>{c.order}  </td>
                             <td>{c.label}</td>
                             <td>
                                 <input type="radio" name={c.pk}
