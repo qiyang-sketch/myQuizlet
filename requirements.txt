@@ -1,5 +1,5 @@
 Django==2.2.13
 django-cors-headers==3.2.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 psycopg2-binary==2.8.4
 pytz==2019.3
